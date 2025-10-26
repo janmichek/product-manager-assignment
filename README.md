@@ -22,7 +22,7 @@
    VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
    ```
 
-3**Start development server**
+3. **Start development server**
    ```bash
    bun dev dev
    ```
