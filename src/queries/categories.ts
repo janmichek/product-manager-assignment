@@ -43,7 +43,6 @@ export const useUpdateCategoryMutation = () => {
   const queryCache = useQueryCache()
   return useMutation({
     mutation: async (category: Category) => {
-
       await categoryService.updateCategory(category)
       return category
     },

@@ -16,7 +16,7 @@ defineEmits<{
 
 <template>
   <div class="form-section">
-    <h4 class="text-h4">Custom Attributes</h4>
+    <h4 class="text-h4 q-mb-sm">Custom Attributes</h4>
 
     <q-card
       v-for="(field, index) in schema"
@@ -88,5 +88,14 @@ defineEmits<{
         </q-btn>
       </div>
     </q-card>
+
+
+    <q-btn
+      type="button"
+      color="secondary"
+      @click="$emit('add-schema-field')"
+      class="full-width q-mb-md">
+      + Add Custom Attribute
+    </q-btn>
   </div>
 </template>

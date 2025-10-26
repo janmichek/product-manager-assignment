@@ -16,7 +16,7 @@ defineProps<{
   </q-btn>
   <div class="flex items-center gap-lg q-mt-md">
     <q-badge
-      class="flex items-center justify-center w-20 h-20 q-mr-sm"
+      class="flex items-center justify-center w-20 h-20 q-mr-sm text-h6"
       :style="{backgroundColor: category.color}">
       {{ category.icon }}
     </q-badge>
