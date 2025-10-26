@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { PiniaColada } from '@pinia/colada'
-import { Quasar} from 'quasar'
+import { Quasar, Dialog, Notify } from 'quasar'
 import '@quasar/extras/material-icons/material-icons.css'
 import 'quasar/dist/quasar.css'
 import './assets/tailwind.css'
@@ -16,6 +16,10 @@ app.use(pinia)
 app.use(PiniaColada)
 app.use(router)
 app.use(Quasar, {
+  plugins: {
+    Dialog,
+    Notify
+  },
   config: {
     brand: {
       primary: '#667eea',
