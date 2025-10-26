@@ -49,6 +49,13 @@ watch(() => props.category, newCategory => {
   }
 }, { immediate: true })
 
+// Reset form when dialog closes
+watch(() => props.modelValue, isOpen => {
+  if (!isOpen && !isEditMode.value) {
+    formData.value = defaultCategoryData()
+  }
+})
+
 function addSchemaField() {
   formData.value.schema.push({
     key: '',
@@ -99,15 +106,6 @@ function submit() {
   }
 
   emit('submit', newCategory as Category)
-  handleReset()
-}
-
-function handleReset() {
-  if (isEditMode.value) {
-    emit('cancel')
-  } else {
-    formData.value = defaultCategoryData()
-  }
 }
 
 function close() {

@@ -43,13 +43,23 @@ watch(() => props.product, newProduct => {
   }
 }, { immediate: true })
 
+// Reset form when dialog closes
+watch(() => props.isOpen, isOpen => {
+  if (!isOpen && !isEditMode.value) {
+    formData.value = {
+      id: '',
+      name: '',
+      categoryId: props.categoryId,
+      price: 0,
+      stock: 0,
+      attributes: {} as Record<string, string | number | boolean>,
+    }
+  }
+})
+
 const submit = () => {
   const product: Product = formData.value
   emit('submit', product)
-
-  if (!isEditMode.value) {
-    cancel()
-  }
 }
 
 function cancel() {
